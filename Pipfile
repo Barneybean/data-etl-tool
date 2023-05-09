@@ -1,0 +1,18 @@
+[[source]]
+url = "https://unata.jfrog.io/unata/api/pypi/instacart-pypi-virtual/simple/"
+verify_ssl = true
+name = "pip_conf_index_global"
+
+[packages]
+pandas = "==2.0.0"
+psycopg2-binary = "*"
+pyyaml = "*"
+pytest = "*"
+sqlalchemy = "*"
+
+[dev-packages]
+pytest = "*"
+
+[requires]
+python_version = "3.8"
+python_full_version = "3.8.10"

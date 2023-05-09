@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+START_DIR=$(pwd)
+cd "$(dirname "$0")"
+cd ..
+
+pipenv shell
+cd $START_DIR
