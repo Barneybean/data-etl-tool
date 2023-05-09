@@ -14,6 +14,12 @@ def main():
         config = lf.load_files.load_config()  
     except Exception as e:
         return 
+    
+    #initialize the database
+    db = database.Database()
+    # execute query to create data model 
+    db.connect_db_and_run_query('query/model_companies.sql', read=False)
+    db.connect_db_and_run_query('query/model_membership.sql', read=False)
 
 if __name__ == "__main__":
     main()
