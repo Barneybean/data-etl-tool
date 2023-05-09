@@ -19,7 +19,9 @@ cur_path = utility.helpers.get_project_path()
 class etl:
     def __init__(self, chunksize, db, config):
         self.chunksize = chunksize
-        self.file_names = config['file_names']
+        self.row_count = 0
+        self.batch_count = 0
+        self.file_names = list(zip(config['file_names'].keys(), config['file_names'].values())) #[('us_softball_league.tsv', 1000000), ('unity_golf_club.csv', 2000000)]
         self.file_name_compnaies = config['file_name_compnaies']
         self.file_name_states = config['file_name_states']
         self.output_main_file = config['output_main_file']
@@ -27,7 +29,6 @@ class etl:
         self.output_column_names = config['output_column_names']
         self.current_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         self.db = db
-        # TODO: move some of these variables to config file
 
     def process_frame_us_softball_league(self, df, org_name, org_id):
         # load the companies and states data
@@ -125,4 +126,76 @@ class etl:
         return df_main, df_bad
 
     def main_job(self):
-        pass
+        # Overall Flow:
+        # create and open the output CSV files, one for main file and one for bad records
+        # read the input files in chunks using pandas
+        # call the pandas functions to transform the data and check for good and bad records
+        # write the output to the output files
+        # ingest the good data to the database
+
+        # Check if the output file exists
+        output_path_main = cur_path+'/output/'+self.output_main_file
+        output_path_bad = cur_path+'/output/'+self.output_bad_record
+
+        # check if the output file exists, if not create it
+        utility.helpers.create_csv_files(output_path_main, self.output_column_names)
+        utility.helpers.create_csv_files(output_path_bad, self.output_column_names)
+
+        #insert data to the companies table
+        company_df = lf.load_files.load_text_file_pandas('companies.csv')
+        company_df['created_at'] = self.current_time
+        company_df['updated_at'] = self.current_time
+        company_df['deleted_at'] = np.nan
+        self.db.ingest_df_to_db(company_df, 'companies')
+                
+        # use append mode to append data to the output files
+        with open(output_path_main, "a", newline='\n') as output_main, open(output_path_bad, "a", newline='\n') as output_bad:
+            # Create CSV writer objects
+            csv_writer1 = csv.writer(output_main)
+            csv_writer2 = csv.writer(output_bad)
+
+            # loop through each input file
+            for file, org_id in self.file_names:
+                # Load csv files in chunk using pandas
+                reader =lf.load_files.load_text_file_pandas_chunk(file, self.chunksize)
+                # loop through each chunk
+                for df in reader:
+                    #keeping the count of the rows processed
+                    self.row_count += len(df)
+                    self.batch_count += 1
+                    print()
+                    message = 'Processing batch' + str(self.batch_count) +'; total rows after process will be ' + str(self.row_count)
+                    print(message)
+                    logging.info(message)
+
+                    # process each data frame
+                    if file == 'us_softball_league.tsv':
+                        df_main, df_bad = self.process_frame_us_softball_league(df, file, org_id)
+                        #if the data is good then load data to the main output file, if not load to the bad record file
+                        if len(df_main) > 0:
+                            #TODO: check if member_id is in the database, if not then insert it
+                            
+                            #append data to the main output file
+                            csv_writer1.writerows(df_main.values)
+                            #append data to postgres database, table: public.membership 
+                            self.db.ingest_df_to_db(df_main, 'membership')
+                           
+                        if len(df_bad) > 0:
+                            csv_writer2.writerows(df_bad.values)
+
+                    if file == 'unity_golf_club.csv':
+                        # apply etl functions to each chunk(df)
+                        df_main, df_bad = self.process_frame_unity_golf_club(df, file, org_id)
+                        
+                        #if the data is good then load data to the main output file, if not load to the bad record file
+                        if len(df_main) > 0:
+                            #TODO: check if member_id is in the database, if not then insert it
+
+                            #append data to the main output file
+                            csv_writer1.writerows(df_main.values)
+                            #load data to postgres database
+                            self.db.ingest_df_to_db(df_main, 'membership')
+
+                        if len(df_bad) > 0:
+                            csv_writer2.writerows(df_bad.values)
+                        

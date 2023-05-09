@@ -1,0 +1,2 @@
+# Sqlfluff bug prevents `variant_column_record` from being parsed properly
+*_variant_cols.sql

@@ -1,0 +1,10 @@
+customer_id,first_name,last_name,original_customer_id,dob,company_name,last_active,score,member_since,state,source_org,created_at,updated_at,deleted_at
+10000000,Mikayla,Brennan,0,1966-11-02,Keller Group,2018-07-04,84,1989,IL,us_softball_league.tsv,2023-05-09 01:07:15,2023-05-09 01:07:15,nan
+10000001,Thomas,Holmes,1,1962-11-29,"Brown, Vasquez and Sanchez",2018-05-15,92,1972,WI,us_softball_league.tsv,2023-05-09 01:07:15,2023-05-09 01:07:15,nan
+10000002,Corey,Jones,2,1964-12-20,nan,2018-08-25,47,2007,NM,us_softball_league.tsv,2023-05-09 01:07:15,2023-05-09 01:07:15,nan
+10000004,Daniel,Mclaughlin,4,1966-06-19,nan,2018-05-10,56,1986,RI,us_softball_league.tsv,2023-05-09 01:07:15,2023-05-09 01:07:15,nan
+20000000,Robert,Mclaughlin,0,1967-03-26,Mcdonald Inc,2018-08-25,57,2013,OR,unity_golf_club.csv,2023-05-09 01:07:15,2023-05-09 01:07:15,nan
+20000001,Brittany,Norris,1,1972-09-06,nan,2018-03-29,73,1986,MD,unity_golf_club.csv,2023-05-09 01:07:15,2023-05-09 01:07:15,nan
+20000002,Sharon,Nichols,2,1971-04-19,nan,2018-04-11,92,1985,WY,unity_golf_club.csv,2023-05-09 01:07:15,2023-05-09 01:07:15,nan
+20000003,Christopher,Ware,3,1977-05-25,nan,2018-07-20,74,2003,PA,unity_golf_club.csv,2023-05-09 01:07:15,2023-05-09 01:07:15,nan
+20000004,Kevin,Scott,4,1981-12-15,nan,2018-11-20,42,1994,MN,unity_golf_club.csv,2023-05-09 01:07:15,2023-05-09 01:07:15,nan

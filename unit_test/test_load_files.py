@@ -8,7 +8,8 @@ import utils.load_files as lf
 
 #unit test for load config
 def test_load_config():
-    assert len(lf.load_files.load_config()) > 0
+    config = lf.load_files.load_config()
+    assert len(config) > 0
 
 # unit test for loading sql
 def test_load_query():

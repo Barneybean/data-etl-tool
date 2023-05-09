@@ -1,0 +1,2 @@
+customer_id,first_name,last_name,original_customer_id,dob,company_name,last_active,score,member_since,state,source_org,created_at,updated_at,deleted_at
+10000003,Laura,Howard,3,1989-04-26,nan,2018-04-15,76,1976,NJ,us_softball_league.tsv,2023-05-09 01:07:15,2023-05-09 01:07:15,nan
