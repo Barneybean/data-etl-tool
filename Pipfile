@@ -10,6 +10,7 @@ pyyaml = "*"
 pytest = "*"
 sqlalchemy = "*"
 sqlfluff = "==2.1.0"
+pre-commit = "*"
 
 [dev-packages]
 pytest = "*"
