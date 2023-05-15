@@ -10,14 +10,15 @@ To install the app:
     open your terminal
     ``` cd ```
     ``` git clone [link] ```
+    if you want to run the app from a branch then ``` git checkout hh_take_home ```
     ``` brew install pipenv ``` (skip this step if you have pipenv installed already. If you do not have brew installed then follow the instruction here: https://docs.brew.sh/Installation)
 
 To set up:
     run the following shell command in your terminal
-    ```source setup```
+    ```source script/setup```
 
 To enter the pipenv environment:
-    ```source start```
+    ```source script/start```
 
 To Execute the app:
     ```pipenv run python app.py```

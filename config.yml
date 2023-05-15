@@ -3,6 +3,7 @@ dev: True
 chunksize: 2
 # set source organization id for each file and create neew customer_id by concating this if and original customer_id
 file_names:
+  #data source file name: source organization id
   us_softball_league.tsv: 1000000
   unity_golf_club.csv: 2000000
 file_name_compnaies: companies.csv

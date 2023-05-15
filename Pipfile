@@ -4,7 +4,7 @@ verify_ssl = true
 name = "pip_conf_index_global"
 
 [packages]
-pandas = "==2.0.0"
+pandas = "*"
 psycopg2-binary = "*"
 pyyaml = "*"
 pytest = "*"
@@ -16,5 +16,4 @@ pre-commit = "*"
 pytest = "*"
 
 [requires]
-python_version = "3.8"
-python_full_version = "3.8.10"
+python_version = "3.8.10"
