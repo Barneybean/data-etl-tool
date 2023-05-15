@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "638e7f141fe59bb43da6d34ec30a1402640bef851bf8f2027c99aac326f568ed"
+            "sha256": "7ecb4972e3d34b2e1df2246a459ba1ba0edd173fb8f1ee2b00bf960cff03d686"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -9,8 +9,8 @@
         },
         "sources": [
             {
-                "name": "pip_conf_index_global",
-                "url": "https://unata.jfrog.io/unata/api/pypi/instacart-pypi-virtual/simple/",
+                "name": "pypi",
+                "url": "https://pypi.python.org/simple",
                 "verify_ssl": true
             }
         ]
@@ -310,7 +310,7 @@
                 "sha256:f25e23a03f7ad7211ffa30cb181c3e5f6d96a8e4cb22898af462a7333f8a74eb",
                 "sha256:fe7914d8ddb2d54b900cec264c090b88d141a1eed605c9539a187dbc2547f022"
             ],
-            "index": "pip_conf_index_global",
+            "index": "pypi",
             "version": "==2.0.1"
         },
         "pathspec": {
@@ -342,7 +342,7 @@
                 "sha256:218e9e3f7f7f3271ebc355a15598a4d3893ad9fc7b57fe446db75644543323b9",
                 "sha256:733f78c9a056cdd169baa6cd4272d51ecfda95346ef8a89bf93712706021b907"
             ],
-            "index": "pip_conf_index_global",
+            "index": "pypi",
             "version": "==3.3.1"
         },
         "psycopg2-binary": {
@@ -410,7 +410,7 @@
                 "sha256:f81e65376e52f03422e1fb475c9514185669943798ed019ac50410fb4c4df232",
                 "sha256:ffe9dc0a884a8848075e576c1de0290d85a533a9f6e9c4e564f19adf8f6e54a7"
             ],
-            "index": "pip_conf_index_global",
+            "index": "pypi",
             "version": "==2.9.6"
         },
         "pygments": {
@@ -426,7 +426,7 @@
                 "sha256:3799fa815351fea3a5e96ac7e503a96fa51cc9942c3753cda7651b93c1cfa362",
                 "sha256:434afafd78b1d78ed0addf160ad2b77a30d35d4bdf8af234fe621919d9ed15e3"
             ],
-            "index": "pip_conf_index_global",
+            "index": "pypi",
             "version": "==7.3.1"
         },
         "python-dateutil": {
@@ -487,7 +487,7 @@
                 "sha256:e61ceaab6f49fb8bdfaa0f92c4b57bcfbea54c09277b1b4f7ac376bfb7a7c174",
                 "sha256:f84fbc98b019fef2ee9a1cb3ce93e3187a6df0b2538a651bfb890254ba9f90b5"
             ],
-            "index": "pip_conf_index_global",
+            "index": "pypi",
             "version": "==6.0"
         },
         "regex": {
@@ -644,7 +644,7 @@
                 "sha256:fd0febae872a4042da44e972c070f0fd49a85a0a7727ab6b85425f74348be14e",
                 "sha256:fec56c7d1b6a22c8f01557de3975d962ee40270b81b60d1cfdadf2a105d10e84"
             ],
-            "index": "pip_conf_index_global",
+            "index": "pypi",
             "version": "==2.0.13"
         },
         "sqlfluff": {
@@ -652,7 +652,7 @@
                 "sha256:66017f63987bebb24ec9fd28228a12b3d224cc40ad5a85976768a38591b7b4b2",
                 "sha256:681cecbaed1534e6bcb51e618613c090d8f3d764ab0ac56982e83b9e89930174"
             ],
-            "index": "pip_conf_index_global",
+            "index": "pypi",
             "version": "==2.1.0"
         },
         "tblib": {
@@ -750,7 +750,7 @@
                 "sha256:3799fa815351fea3a5e96ac7e503a96fa51cc9942c3753cda7651b93c1cfa362",
                 "sha256:434afafd78b1d78ed0addf160ad2b77a30d35d4bdf8af234fe621919d9ed15e3"
             ],
-            "index": "pip_conf_index_global",
+            "index": "pypi",
             "version": "==7.3.1"
         },
         "tomli": {

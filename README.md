@@ -16,6 +16,17 @@ To install the app:
 To set up:
     run the following shell command in your terminal
     ```source script/setup```
+    create environment file to store your database connection variables
+    ```touch .env```
+    ```open .env```
+    then copy the following variable names and update them with your db connections
+    ```
+    POSTGRES_DATABASE=[replace with your database]
+    POSTGRES_USER=[replace with your username]
+    POSTGRES_PASSWORD=[replace with your password]
+    POSTGRES_HOST=[replace with your host]
+    POSTGRES_PORT=[replace with your port]
+    ```
 
 To enter the pipenv environment:
     ```source script/start```
