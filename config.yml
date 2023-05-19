@@ -1,0 +1,27 @@
+dev: True
+# dev: Fasle
+chunksize: 2
+# set source organization id for each file and create neew customer_id by concating this if and original customer_id
+file_names:
+  #data source file name: source organization id
+  us_softball_league.tsv: 1000000
+  unity_golf_club.csv: 2000000
+file_name_compnaies: companies.csv
+file_name_states: states.csv
+output_main_file: main_output.csv
+output_bad_record: bad_record.csv
+output_column_names:
+  - customer_id
+  - first_name
+  - last_name
+  - original_customer_id
+  - dob
+  - company_name
+  - last_active
+  - score
+  - member_since
+  - state
+  - source_org
+  - created_at
+  - updated_at
+  - deleted_at

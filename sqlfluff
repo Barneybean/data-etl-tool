@@ -1,0 +1,26 @@
+# ----- WARNING -----
+# Our build pipelines only run sqlfluff on any changed files, so any
+# changes made to this configuration file will only affect models
+# changed after this file is updated. Whenever an update is made to
+# this file, please run sqlfluff on ALL files in the repo and fix
+# any new issues introduced by the configuration change so that our
+# files are in a healthy state and conform to all rules
+
+[sqlfluff]
+templater = dbt
+dialect = postgresql
+# https://docs.sqlfluff.com/en/stable/rules.html
+# Some rules can break sql during run time especially for B12 models.
+rules = AL02,AL04,CP01,CP02,CP03,CP04,CV03,CV05,JJ01,LT01,LT04,LT06,LT07,LT08,LT10,LT12,ST03,ST08
+# TODO enforce LT02 after upgrading sqlfluff
+large_file_skip_byte_limit = 30000
+max_line_length = 120
+
+[sqlfluff:templater:dbt]
+project_dir = ./
+profiles_dir = ../
+profile = ./
+target = default_local
+
+[sqlfluff:rules:layout.long_lines]
+ignore_comment_lines = True

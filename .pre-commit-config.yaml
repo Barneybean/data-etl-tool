@@ -1,0 +1,29 @@
+# Please do not add more checks to this file without also adding a detailed explanation of each new
+# step to this file: https://instacart.atlassian.net/wiki/spaces/DATA/pages/3740402221/DBT+pre-commit#Pre-Commit-Checks-Enabled-%26-How-to-Fix-Them
+
+repos:
+    -   repo: https://github.com/pre-commit/pre-commit-hooks
+        rev: v4.4.0
+        hooks:
+        -   id: end-of-file-fixer
+            exclude: ^input
+            name: All files end with a newline character
+        -   id: no-commit-to-branch
+            name: Commit is not to main/master
+        -   id: check-merge-conflict
+            name: No merge conflicts
+        -   id: trailing-whitespace
+            name: No trailing whitespace
+        -   id: check-yaml
+            name: YAML files are valid
+    -   repo: https://github.com/ambv/black #format
+        rev: 20.8b1
+        hooks:
+        -   id: black
+    -   repo: local
+        hooks:
+        -   id: pylint
+            name: pylint
+            entry: pylint
+            language: python
+            types: [python]

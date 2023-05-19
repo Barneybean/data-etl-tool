@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+START_DIR=$(pwd)
+#cd to where the script is
+cd "$(dirname "$0")"
+# retrun to root because this location is at script file
+cd ..
+
+pipenv install --python 3.8.10
+cd $START_DIR
