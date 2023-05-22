@@ -1,9 +1,3 @@
-# Next Step
-
-## Notes:
-1. For simplicity given time constraints, I am using the sql create statement in the query folder to create data models in db, in long term, I will need to use sqlalchemy library to build out the data model objects
-2. Given the time constraints, I did not write unit test for all the functions. At work, I would write unite tests for all functions ideally
-
 ## Data related issues to solve as next step
 1. Clean up the membership data loaded in the database Validate unique customer and consolidate if same customer apears in both file sources. verify company id if the two clubs shows conflict details for the same customer
 2. Sync scoring for the customers from two companies and maybe create a new scoring system to score the customers
