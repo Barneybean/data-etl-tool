@@ -25,13 +25,11 @@ To set up:
     
     then copy the following variable names and update them with your db connections.  
     
-    ``` 
     POSTGRES_DATABASE=[replace with your database]  
     POSTGRES_USER=[replace with your username]  
     POSTGRES_PASSWORD=[replace with your password] 
     POSTGRES_HOST=[replace with your host]  
     POSTGRES_PORT=[replace with your port] 
-    ```
 
 To enter the pipenv environment:
 
@@ -43,11 +41,14 @@ To Execute the app:
 
 To make sure SQLs are to the standard:
     cd to the query folder
-    ```sqlfluff lint [replace this with sql file path] --dialect postgres ```
+    
+    ```sqlfluff lint [replace this with sql file path] --dialect postgres```
+    
     ie: sqlfluff lint '/Users/williamgao/data-etl-tool/query/model_companies.sql' --dialect postgres
 
     To auto fix the format, just chaneg the "lint" to "fix"
-    ```sqlfluff fix [replace this with sql file path] --dialect postgres ```
+    
+    ```sqlfluff fix [replace this with sql file path] --dialect postgres```
 
 Please contact me if you have any questions
 
