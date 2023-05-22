@@ -14,12 +14,17 @@ To install the app:
     ``` brew install pipenv ``` (skip this step if you have pipenv installed already. If you do not have brew installed then follow the instruction here: https://docs.brew.sh/Installation)
 
 To set up:  
-    run the following shell command in your terminal. 
-    ```source script/setup```   
+    run the following shell command in your terminal.   
+    
+    ```source script/setup```     
+    
     create environment file to store your database connection variables.    
+    
     ```touch .env``` 
     ```open .env```  
+    
     then copy the following variable names and update them with your db connections.  
+    
     ``` 
     POSTGRES_DATABASE=[replace with your database]  
     POSTGRES_USER=[replace with your username]  
@@ -29,9 +34,11 @@ To set up:
     ```
 
 To enter the pipenv environment:
+
     ```source script/start```
 
 To Execute the app:
+
     ```pipenv run python app.py```
 
 To make sure SQLs are to the standard:
